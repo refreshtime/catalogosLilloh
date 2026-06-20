@@ -293,7 +293,7 @@ var KITS_DEFAULT = [
 // ─────────────────────────────────────
 var currentTab = 'feminino';
 var editingId = null;
-var STATE = { baseUrl: '', signature: 'Lilloh Baby Gifts · @lillohbabygifts', whatsapp: '5511942748600', heroImgUrl: '', aboutImgUrl: '', corpImgUrl: '', kits: [] };
+var STATE = { baseUrl: 'https://refreshtime.github.io/catalogosLilloh', signature: 'Lilloh Baby Gifts · @lillohbabygifts', whatsapp: '5511942748600', heroImgUrl: '', aboutImgUrl: '', corpImgUrl: '', kits: [] };
 
 function loadState() {
   var saved = localStorage.getItem('lilloh_state');
@@ -331,7 +331,7 @@ function applyParsed(parsed) {
       name:     over.name     || k.name,
       price:    over.price    || k.price,
       items:    over.items    || k.items,
-      imageUrl: over.imageUrl !== undefined ? over.imageUrl : k.imageUrl,
+      imageUrl: (over.imageUrl !== undefined && over.imageUrl !== '') ? over.imageUrl : k.imageUrl,
       selected: over.selected !== undefined ? over.selected : true
     };
   });
