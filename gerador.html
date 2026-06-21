@@ -317,7 +317,7 @@ function loadState() {
 }
 
 function applyParsed(parsed) {
-  STATE.baseUrl    = parsed.baseUrl    || '';
+  STATE.baseUrl    = parsed.baseUrl    || STATE.baseUrl;
   STATE.signature  = parsed.signature  || STATE.signature;
   STATE.whatsapp   = parsed.whatsapp   || STATE.whatsapp;
   STATE.heroImgUrl = parsed.heroImgUrl || '';
