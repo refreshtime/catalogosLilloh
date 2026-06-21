@@ -296,7 +296,7 @@ var editingId = null;
 var STATE = { baseUrl: 'https://refreshtime.github.io/catalogosLilloh', signature: 'Lilloh Baby Gifts · @lillohbabygifts', whatsapp: '5511942748600', heroImgUrl: '', aboutImgUrl: '', corpImgUrl: '', kits: [] };
 
 function loadState() {
-  var saved = localStorage.getItem('lilloh_state');
+  var saved = localStorage.getItem('lilloh_state_v2');
   // arquivo salvo tem estado embutido — tem prioridade
   if (window.LILLOH_SAVED_STATE) {
     var parsed = window.LILLOH_SAVED_STATE;
@@ -346,7 +346,7 @@ function initKits() {
 function saveState() {
   var overrides = {};
   STATE.kits.forEach(function(k) { overrides[k.id] = { name:k.name, price:k.price, items:k.items, imageUrl:k.imageUrl, selected:k.selected }; });
-  localStorage.setItem('lilloh_state', JSON.stringify({ baseUrl:STATE.baseUrl, signature:STATE.signature, whatsapp:STATE.whatsapp, heroImgUrl:STATE.heroImgUrl, aboutImgUrl:STATE.aboutImgUrl, corpImgUrl:STATE.corpImgUrl, kits:overrides }));
+  localStorage.setItem('lilloh_state_v2', JSON.stringify({ baseUrl:STATE.baseUrl, signature:STATE.signature, whatsapp:STATE.whatsapp, heroImgUrl:STATE.heroImgUrl, aboutImgUrl:STATE.aboutImgUrl, corpImgUrl:STATE.corpImgUrl, kits:overrides }));
 }
 
 function getKit(id) {
